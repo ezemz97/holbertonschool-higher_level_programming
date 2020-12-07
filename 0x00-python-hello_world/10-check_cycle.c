@@ -11,15 +11,18 @@ int check_cycle(listint_t *list)
 	listint_t *var1 = list;
 	listint_t *var2 = list;
 
-	while (1 && list != NULL)
+	if (list != NULL)
 	{
-		var1 = var1->next;
-		var2 = var2->next;
-		if (var2->next == NULL)
-			break;
-		var2 = var2->next;
-		if (var2 == var1)
-			return (1);
+		while (1)
+		{
+			var1 = var1->next;
+			var2 = var2->next;
+			if (var2->next == NULL)
+				break;
+			var2 = var2->next;
+			if (var2 == var1)
+				return (1);
+		}
 	}
 	return (0);
 }
