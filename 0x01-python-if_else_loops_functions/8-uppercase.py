@@ -3,7 +3,5 @@ def uppercase(str):
     for letter in str:
         if ord(letter) >= ord('a') and ord(letter) <= ord('z'):
             letter = chr(ord(letter) - 32)
-            print(letter, end="")
-        else:
-            print(letter, end="")
+        print(letter, end="")
     print()
