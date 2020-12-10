@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from sys import argv
 if __name__ == "__main__":
-    largo = len(argv) -1
+    largo = len(argv) - 1
     if largo == 0:
         print("{} arguments.".format(largo))
     elif largo == 1:
