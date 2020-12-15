@@ -27,7 +27,11 @@ int is_palindrome(listint_t **head)
 	for (z = 0; z < x / 2; z++, y--)
 	{
 		if (array[z] != array[y])
+		{
+			free(array);
 			return (0);
+		}
 	}
+	free(array);
 	return (1);
 }
