@@ -6,8 +6,8 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int x = 0, y = 0, z = 0, array[10];
-	listint_t *tmp = *head/* *count = *head*/;
+	int x = 0, y = 0, z = 0, *array;
+	listint_t *tmp = *head/*, *count = *head*/;
 
 	if (!head)
 		return (1);
@@ -15,11 +15,11 @@ int is_palindrome(listint_t **head)
 	{
 		x++;
 		count = count->next;
-	}
-	array = malloc(sizeof(int) * x);
-	*/
+	}*/
+	array = malloc(sizeof(int) * 20);
 	while (tmp)
 	{
+		x++;
 		array[y] = tmp->n;
 		y++;
 		tmp = tmp->next;
@@ -29,8 +29,10 @@ int is_palindrome(listint_t **head)
 	{
 		if (array[z] != array[y])
 		{
+			free(array);
 			return (0);
 		}
 	}
+	free(array);
 	return (1);
 }
