@@ -6,17 +6,18 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int x = 0, y = 0, z = 0, *array = 0;
-	listint_t *tmp = *head, *count = *head;
+	int x = 0, y = 0, z = 0, array[1024];
+	listint_t *tmp = *head/* *count = *head*/;
 
 	if (!head)
 		return (1);
-	while (count)
+	/*while (count)
 	{
 		x++;
 		count = count->next;
 	}
 	array = malloc(sizeof(int) * x);
+	*/
 	while (tmp)
 	{
 		array[y] = tmp->n;
@@ -28,10 +29,8 @@ int is_palindrome(listint_t **head)
 	{
 		if (array[z] != array[y])
 		{
-			free(array);
 			return (0);
 		}
 	}
-	free(array);
 	return (1);
 }
