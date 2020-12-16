@@ -19,7 +19,17 @@ int is_palindrome(listint_t **head)
 		y++;
 		tmp = tmp->next;
 	}
-	y -= 1;
+	while (array[z] == array[y])
+	{
+		z++;
+		y--;
+		if (z >= x / 2)
+		{
+			free(array);
+			return (0);
+		}
+	}
+	/*
 	for (z = 0; z < x / 2; z++, y--)
 	{
 		if (array[z] != array[y])
@@ -28,6 +38,7 @@ int is_palindrome(listint_t **head)
 			return (0);
 		}
 	}
+	*/
 	free(array);
 	return (1);
 }
