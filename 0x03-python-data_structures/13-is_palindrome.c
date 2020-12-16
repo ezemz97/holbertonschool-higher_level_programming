@@ -6,12 +6,12 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp = *head;
-	int array[2048]
+	listint_t *tmp = (*head);
+	int array[2048];
+	int y = 0, z;
 	
 	if (!head)
 		return (1);
-	
 	while (tmp)
 	{
 		array[y] = tmp->n;
