@@ -7,19 +7,14 @@
 int is_palindrome(listint_t **head)
 {
 	int x = 0, y = 0, z = 0, *array;
-	listint_t *tmp = *head/*, *count = *head*/;
+	listint_t *tmp = *head;
 
 	if (!head)
 		return (1);
-	/*while (count)
-	{
-		x++;
-		count = count->next;
-	}*/
-	array = malloc(sizeof(int) * 20);
+	x = counter(*head);
+	array = malloc(sizeof(int) * x);
 	while (tmp)
 	{
-		x++;
 		array[y] = tmp->n;
 		y++;
 		tmp = tmp->next;
@@ -35,4 +30,15 @@ int is_palindrome(listint_t **head)
 	}
 	free(array);
 	return (1);
+}
+int counter(listint_t *head)
+{
+	int x = 0;
+
+	while (head)
+	{
+		x++;
+		head = head->next;
+	}
+	return (x);
 }
