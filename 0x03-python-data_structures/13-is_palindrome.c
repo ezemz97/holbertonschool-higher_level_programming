@@ -6,50 +6,23 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int x = 0, y = 0, z = 0, *array;
 	listint_t *tmp = *head;
-
+	int array[2048]
+	
 	if (!head)
 		return (1);
-	x = counter(*head);
-	array = malloc(sizeof(int) * x);
+	
 	while (tmp)
 	{
 		array[y] = tmp->n;
 		y++;
 		tmp = tmp->next;
 	}
-	while (array[z] == array[y])
-	{
-		z++;
-		y--;
-		if (z >= x / 2)
-		{
-			free(array);
-			return (0);
-		}
-	}
-	/*
-	for (z = 0; z < x / 2; z++, y--)
+	y--;
+	for (z = 0; z <= y; y--, z++)
 	{
 		if (array[z] != array[y])
-		{
-			free(array);
 			return (0);
-		}
 	}
-	*/
-	free(array);
 	return (1);
-}
-int counter(listint_t *head)
-{
-	int x = 0;
-
-	while (head)
-	{
-		x++;
-		head = head->next;
-	}
-	return (x);
 }
