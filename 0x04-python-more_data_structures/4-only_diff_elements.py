@@ -1,7 +1,3 @@
 #!/usr/bin/python3
 def only_diff_elements(set_1, set_2):
-    if set_1 && set_2:
-        set = set_1 | set_2
-        return set
-    else:
-        return None
+    return set(set1_ | set_2)
