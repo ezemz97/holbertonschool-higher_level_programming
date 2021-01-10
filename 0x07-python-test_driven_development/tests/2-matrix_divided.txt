@@ -1,0 +1,47 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix_divided([[1, 2, 3], [1.111, 2.222, 3.333]], 2)
+[[0.5, 1.0, 1.5], [0.56, 1.11, 1.67]]
+
+>>> matrix_divided([[1, 2, 3], [1.111, 2.222]], 2)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+>>> matrix_divided([[1, 2, 3], [1.111, 2.222, 3.333]])
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+>>> matrix_divided([[1, 2, 3], [1.111, 2.222, 3.333]], None)
+Traceback (most recent call last):
+TypeError: div must be a number
+
+>>> matrix_divided([[1, 2, 3]], 2)
+[[0.5, 1.0, 1.5]]
+
+>>> matrix_divided([[1, 2, 3], [1.111, 2.222, "string"]], 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([1, 2, 3], [1.111, 2.222, "string"], 2)
+Traceback (most recent call last):
+TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+>>> matrix_divided([[-1, -2, -3], [-1, -2, -3]], 2)
+[[-0.5, -1.0, -1.5], [-0.5, -1.0, -1.5]]
+
+>>> matrix_divided([[-1, -2, -3], [-1, -2, -3]], -2)
+[[0.5, 1.0, 1.5], [0.5, 1.0, 1.5]]
+
+>>> matrix_divided([[-1, -2, -3], [-1, -2, -3]], -2.222)
+[[0.45, 0.9, 1.35], [0.45, 0.9, 1.35]]
+
+>>> matrix_divided([[-1, -2, -3], [-1, -2, -3]], -2.222+2)
+[[4.5, 9.01, 13.51], [4.5, 9.01, 13.51]]
+
+>>> matrix_divided([[-1, -2, int(x)], [-1, -2, -3]], -0)
+Traceback (most recent call last):
+NameError: name 'x' is not defined
+
+>>> matrix_divided([[-1, -2, int("x")], [-1, -2, -3]], -0)
+Traceback (most recent call last):
+ValueError: invalid literal for int() with base 10: 'x'

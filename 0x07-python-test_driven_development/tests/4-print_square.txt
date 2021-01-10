@@ -1,0 +1,99 @@
+>>> print_square = __import__('4-print_square').print_square
+
+>>> print_square(42)
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+##########################################
+
+>>> print_square(-42)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+>>> print_square(float(42))
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(42.1)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(-42.1)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(None)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(HOLBERTON)
+Traceback (most recent call last):
+NameError: name 'HOLBERTON' is not defined
+
+>>> print_square("HOLBERTON")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(0)
+
+>>> print_square(\n)
+Traceback (most recent call last):
+SyntaxError: unexpected character after line continuation character
+
+>>> print_square("\n")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square("")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(""")
+Traceback (most recent call last):
+SyntaxError: EOF while scanning triple-quoted string literal
+
+>>> print_square([42])
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square((42,))
+Traceback (most recent call last):
+TypeError: size must be an integer

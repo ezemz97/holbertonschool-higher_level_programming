@@ -1,0 +1,89 @@
+The ``3-say_my_name`` module
+======================
+
+Using ``say_my_name``
+-------------------
+import:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+-------------------
+tests:
+    >>> say_my_name(Ezequiel, Martinez)
+    Traceback (most recent call last):
+    NameError: name 'Ezequiel' is not defined
+
+    >>> say_my_name(Ezequiel)
+    Traceback (most recent call last):
+    NameError: name 'Ezequiel' is not defined
+
+    >>> say_my_name(Ezequiel, None)
+    Traceback (most recent call last):
+    NameError: name 'Ezequiel' is not defined
+
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(42, 66)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(42)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Eze")
+    My name is Eze 
+
+    >>> say_my_name(Eze/nMartinez)
+    Traceback (most recent call last):
+    NameError: name 'Eze' is not defined
+
+    >>> say_my_name("\n")
+    My name is 
+    <BLANKLINE>
+
+    >>> say_my_name("Eze\nQuiel)
+    Traceback (most recent call last):
+    SyntaxError: EOL while scanning string literal
+
+    >>> say_my_name(True, False)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(Eze, False)
+    Traceback (most recent call last):
+    NameError: name 'Eze' is not defined
+
+    >>> say_my_name("Eze", False)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name("Eze", True)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(42.66, 1)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(["Eze"])
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(("Eze",))
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(-42)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(Eze, None)
+    Traceback (most recent call last):
+    NameError: name 'Eze' is not defined
+
+    >>> say_my_name("Eze", None)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+        
