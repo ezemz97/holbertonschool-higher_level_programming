@@ -122,4 +122,4 @@ class Rectangle:
             A square
 
         """
-        return Rectangle(size, size)
+        return cls(size, size)
