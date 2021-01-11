@@ -5,7 +5,7 @@ Using ``add_integer``
 -------------------
 import:
     >>> add_integer = __import__('0-add_integer').add_integer
--------------------
+
 tests:
     int + int:
 	    >>> add_integer(21, 21)

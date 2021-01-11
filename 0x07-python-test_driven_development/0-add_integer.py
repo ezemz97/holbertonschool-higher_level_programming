@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""A single function module,
-the function adds two numbers
+"""Single function module.
+
+This function adds two numbers
 
 """
 
