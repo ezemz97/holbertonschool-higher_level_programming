@@ -7,14 +7,19 @@ Class:
 
 
 class Rectangle:
-    """Class to define a Rectangle."""
+    """Class to define a Rectangle.
+
+    Attributes:
+        __width: Width of the rectangle object
+        __height: Height of the rectangle object
+    """
 
     def __init__(self, width=0, height=0):
         """Initialization of a rectangle object.
 
         Args:
-        __width (int): Width of the rectangle.
-        __height (int): Height of the rectangle.
+        width (int): Width of the rectangle.
+        height (int): Height of the rectangle.
 
         """
 
