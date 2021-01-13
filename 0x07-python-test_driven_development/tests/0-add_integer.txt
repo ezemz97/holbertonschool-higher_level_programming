@@ -89,6 +89,8 @@ tests:
         >>> add_integer(4e2000, 100e200)
         Traceback (most recent call last):
         OverflowError: cannot convert float infinity to integer
-
-
     
+    is nan:
+        >>> add_integer(float('NaN'))
+        Traceback (most recent call last):
+        ValueError: cannot convert float NaN to integer
