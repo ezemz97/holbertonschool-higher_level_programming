@@ -29,7 +29,7 @@ def text_indentation(text):
         ):
             if whitespace is False:
                 print("{}".format(character), end="")
-            else:
+            elif whitespace is True and character is " ":
                 whitespace = False
                 continue
         else:
