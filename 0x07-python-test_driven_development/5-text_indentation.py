@@ -19,47 +19,18 @@ def text_indentation(text):
 
     """
     if type(text) is not str:
-        raise TypeError("text must be a string")
-
-    white = False
+        raise TypeError('text must be a string')
+    white = 0
     for char in text:
-        if char is " ":
-            if white is True:
+        if white == 0:
+            if char == " ":
                 continue
             else:
-                print("{}".format(char), end="")
-                white = True
-        elif char is ":" or char is "." or char is "?":
-            print("{}".format(char), end="\n")
-            white = True
+                print(char, end="")
+                white = 1
         else:
-            print("{}".format(char), end="")
-            white = False
-
-
-
-
-
-
-
-
-
-
-
-    '''
-    whitespace = False
-    for char in text:
-        if (
-            char is not "." and char is not ":"
-            and char is not "?"
-        ):
-            if whitespace is False:
-                print("{}".format(char), end="")
-            elif whitespace is True and char is " ":
-                whitespace = False
-                continue
-        else:
-            print("{}".format(char))
-            print()
-            whitespace = True
-    '''
+            if char == "?" or char == "." or char == ":":
+                print(char, end="\n")
+                white = 0
+            else:
+                print(char, end="")
