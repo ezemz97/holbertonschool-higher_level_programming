@@ -30,7 +30,8 @@ def text_indentation(text):
                 white = 1
         else:
             if char == "?" or char == "." or char == ":":
-                print(char, end="\n")
+                print(char)
+                print("")
                 white = 0
             else:
                 print(char, end="")
