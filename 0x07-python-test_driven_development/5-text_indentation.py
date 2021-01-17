@@ -19,7 +19,7 @@ def text_indentation(text):
 
     """
     if type(text) is not str:
-        raise TypeError('text must be a string')
+        raise TypeError("text must be a string")
     white = 0
     for char in text:
         if white == 1:
@@ -29,6 +29,7 @@ def text_indentation(text):
                 white = 0
         if char == "?" or char == "." or char == ":":
             print(char)
+            print("")
             white = 1
         else:
             print(char, end="")
