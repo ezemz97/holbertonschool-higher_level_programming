@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Single function to write text to a file
 
 Example: write_file("textfile.txt", "hello world")
@@ -17,5 +18,4 @@ def write_file(filename="", text=""):
 
     """
     with open(filename, mode="w", encoding="utf-8") as file:
-        wcount = file.write(text)
-        return wcount
+        return file.write(text)
