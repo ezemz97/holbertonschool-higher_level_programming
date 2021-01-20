@@ -11,7 +11,7 @@ def write_file(filename="", text=""):
     Args:
         filename (str): Name of the file to open
         text (str): Text to write to the file
-    
+
     Returns:
         Number of characters written
 
