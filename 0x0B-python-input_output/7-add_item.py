@@ -10,6 +10,7 @@ try:
     plist = load("add_item.json")
 except FileNotFoundError:
     plist = []
-for arg in sys.argv[1:]:
+for arg in argv[1:]:
     plist.append(arg)
+
 save(plist, "add_item.json")
