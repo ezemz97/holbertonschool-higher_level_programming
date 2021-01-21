@@ -5,9 +5,9 @@
 class Students:
     def __init__(self, first_name, last_name, age):
         """Initializes a student"""
-        self.__first_name = first_name
-        self.__last_name = last_name
-        self.__age = age
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
     def to_json(self):
         """Returns the dictionary representation
