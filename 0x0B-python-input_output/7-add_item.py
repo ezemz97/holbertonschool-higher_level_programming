@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-"""Defines a function to save a list of arguments to a file"""
-import json
+"""Add item"""
 from sys import argv
-save = __import__("5-save_to_json_file").save_to_json_file
-load = __import__('6-load_from_json_file').load_from_json_file
+save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 
 
+filename = "add_item.json"
 try:
-    plist = load("add_item.json")
-except FileNotFoundError:
-    plist = []
+    my_list = load_from_json_file(filename)
+except:
+    my_list = []
 for arg in argv[1:]:
-    plist.append(arg)
-
-save(plist, "add_item.json")
+    my_list.append(arg)
+save_to_json_file(my_list, filename)
