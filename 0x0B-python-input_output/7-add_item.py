@@ -11,6 +11,6 @@ try:
 except FileNotFoundError:
     plist = []
 for arg in sys.argv[1:]:
-    plist.append(sys.argv[arg])
+    plist.append(arg)
 
 save(plist, "add_item.json")
