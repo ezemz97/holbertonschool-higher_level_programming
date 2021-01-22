@@ -1,10 +1,11 @@
 """Module of the base class"""
-
+#╬
 
 class Base:
     """The base class, to manage id attributes"""
 
     __nb_objects = 0
+    print_symbol = "#"
 
     def __init__(self, id=None):
         """Base constructor"""
