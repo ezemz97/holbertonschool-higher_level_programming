@@ -45,3 +45,23 @@ class Base:
                 element = cls.to_dictionary(element)
                 tojson.append(element)
             file.write(Base.to_json_string(tojson))
+
+    @classmethod #this is important
+    def create(cls, **dictionary):
+        """ returns instance with attributes already set """
+        dummy = cls(1, 1)
+        cls.update(dummy, **dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        lyst = []
+        name = cls.__name__ + ".json"
+        try:
+            with open(name, "r") as file:
+                lyst = cls.from_json_string(file.read())
+        except FileNotFoundError:
+            return lyst
+        for element in range(len(lyst)):
+            lyst[element] = cls.create(**lyst[element])
+        return lyst
