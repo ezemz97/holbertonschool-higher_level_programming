@@ -1,6 +1,6 @@
+#!/usr/bin/python3
 """Module of the "Base" class."""
 import json
-
 
 
 class Base:
@@ -14,7 +14,7 @@ class Base:
 
     """
     __nb_objects = 0
-    #╬
+    # ╬
     print_symbol = "#"
 
     def __init__(self, id=None):
@@ -48,7 +48,6 @@ class Base:
             return []
         return json.loads(json_string)
 
-
     @classmethod
     def save_to_file(cls, list_objs):
         """Saves a list of instances to a .json file.
@@ -68,7 +67,7 @@ class Base:
                 tojson.append(element)
             file.write(Base.to_json_string(tojson))
 
-    @classmethod #this is important
+    @classmethod  # this is important
     def create(cls, **dictionary):
         """Creates a new instance with all attributes already set.
 

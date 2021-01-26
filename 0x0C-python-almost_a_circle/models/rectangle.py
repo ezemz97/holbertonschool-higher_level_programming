@@ -1,56 +1,75 @@
 #!/usr/bin/python3
+"""Module of the "Rectangle" class."""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle class"""
+    """The Rectangle class.
+
+    Contains the methods pertinent to the initialization,
+    representation and manipulation of Rectangle objects.
+
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Rectangle generator.
+
+        Creates a new Rectangle instance.
+
+        """
         super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
 
-#
-
     @property
     def width(self):
-        """Get the width of the rectangle."""
+        """Retrieves the width of a rectangle (getter).
+
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Sets the value of width for the rectangle."""
+        """Sets the width for a rectangle (setter).
+
+        """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-#
 
     @property
     def height(self):
-        """Get the height of the rectangle."""
+        """Retrieves the height of a rectangle (getter).
+
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Sets a height for the rectangle."""
+        """Sets the height for a rectangle (setter).
+
+        """
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be > 0")
         self.__height = value
-#
 
     @property
     def x(self):
-        """Get the X value of a rectangle"""
+        """Retrieves the X value of a rectangle (getter).
+
+        """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """Sets the value X for a rectangle"""
+        """Sets the X value for a rectangle (setter).
+
+        """
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -60,12 +79,16 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Get the Y value of a rectangle"""
+        """Retrieves the Y value of a rectangle (getter).
+
+        """
         return self.__y
 
     @y.setter
     def y(self, value):
-        """Sets the value Y for a rectangle"""
+        """Sets the Y value for a rectangle (setter).
+
+        """
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -74,11 +97,16 @@ class Rectangle(Base):
 #
 
     def area(self):
-        """Gets the area of a rectangle."""
+        """Calculates the area of a rectangle.
+
+        """
         return (self.__height * self.__width)
 
     def display(self):
-        """Prints a rectangle with numeral characters."""
+        """Displays a rectangle represented by
+        numeral characters (#).
+
+        """
         if ((self.__width == 0) or (self.__height == 0)):
             return ""
 
@@ -97,12 +125,16 @@ class Rectangle(Base):
         print(sqrstr)
 
     def __str__(self):
-        """Returns the print() and str() representation of a rectangle"""
+        """Returns the print() and str() representation of a rectangle.
+
+        """
         return "[Rectangle] ({}) {}/{} - {}/{}".\
             format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
-        """Updates a rectangle attributes"""
+        """Updates the attributes of a rectangle, from a dictionary.
+
+        """
         attrs = ["id", "width", "height", "x", "y"]
         if not args:
             for key, value in kwargs.items():
@@ -112,6 +144,9 @@ class Rectangle(Base):
                 setattr(self, attrs[arg], args[arg])
 
     def to_dictionary(self):
+        """Returns the dictionary representation of a rectangle.
+
+        """
         return {
             "id": self.id,
             "width": self.width,
