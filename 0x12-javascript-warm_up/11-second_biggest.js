@@ -1,5 +1,5 @@
 #!/usr/bin/node
-let argList = process.argv;
+const argList = process.argv;
 if (argList.length <= 3) {
   console.log(0);
 } else {
