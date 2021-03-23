@@ -1,6 +1,6 @@
 #!/usr/bin/node
 let i = 0;
-let biggest = parseInt(process.argv[2]); let second;
+let biggest = parseInt(process.argv[2]); let second = 0;
 
 if (process.argv.length <= 3) {
   console.log(0);
