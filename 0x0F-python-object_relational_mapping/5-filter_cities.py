@@ -21,4 +21,3 @@ if __name__ == "__main__":
     print(", ".join(new_list))
     cursor.close()
     db.close()
-
