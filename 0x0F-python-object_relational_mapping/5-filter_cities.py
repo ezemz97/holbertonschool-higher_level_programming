@@ -17,6 +17,6 @@ if __name__ == "__main__":
                    AND states.name = %s ORDER BY cities.id", (search, ))
     results = cursor.fetchall()
     for city in results:
-            new_list.append(city[0])
-        print(", ".join(new_list))
+        new_list.append(city[0])
+    print(", ".join(new_list))
     db.close()
