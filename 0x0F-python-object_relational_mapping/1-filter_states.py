@@ -1,18 +1,20 @@
 #!/usr/bin/python3
-"""Fetch all states from database hbtn_0e_0_usa"""
+"""This module makes a MySQL query."""
 import MySQLdb
 from sys import argv
 
-if __name__ == "__main__":
-    username = argv[1]
-    password = argv[2]
-    db_name = argv[3]
 
-    db = MySQLdb.connect("localhost", username, password, db_name)
+if __name__ == "__main__":
+    db = MySQLdb.connect(host="localhost", user=argv[1],
+                         passwd=argv[2], db=argv[3], port=3306)
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM {}.states WHERE name LIKE 'N%'".format(db_name))
+    sql = "SELECT * FROM states \
+           WHERE states.name LIKE 'N%' \
+           ORDER BY states.id ASC;"
+    cursor.execute(sql)
     results = cursor.fetchall()
     for row in results:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
+    cursor.close()
     db.close()
-

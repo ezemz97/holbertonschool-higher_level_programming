@@ -11,8 +11,9 @@ if __name__ == "__main__":
 
     db = MySQLdb.connect("localhost", username, password, db_name)
     cursor = db.cursor()
-    cursor.execute("SELECT GROUP_CONCAT(cities.name SEPARATOR ', ') FROM states JOIN cities WHERE states.id = cities.state_id AND states.name = %s ORDER BY cities.id", (search, ))
+    cursor.execute("SELECT GROUP_CONCAT(cities.name SEPARATOR ', ') \
+                   FROM states JOIN cities WHERE states.id = cities.state_id \
+                   AND states.name = %s ORDER BY cities.id", (search, ))
     results = cursor.fetchall()
     print(results[0][0])
     db.close()
-
