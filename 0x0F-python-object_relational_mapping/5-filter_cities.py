@@ -12,11 +12,13 @@ if __name__ == "__main__":
 
     db = MySQLdb.connect("localhost", username, password, db_name)
     cursor = db.cursor()
-    cursor.execute("SELECT GROUP_CONCAT(cities.name SEPARATOR ', ') \
+    cursor.execute("SELECT cities.name \
                    FROM states JOIN cities WHERE states.id = cities.state_id \
                    AND states.name = %s ORDER BY cities.id", (search, ))
     results = cursor.fetchall()
     for city in results:
         new_list.append(city[0])
     print(", ".join(new_list))
+    cursor.close()
     db.close()
+
