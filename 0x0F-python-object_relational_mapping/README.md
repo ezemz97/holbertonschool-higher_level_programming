@@ -1,7 +1,8 @@
 # 0x0F. Python - Object-relational mapping
 
-* ## MySQLdb to connect to a MySQL database and execute SQL queries.
-* ## SQLAlchemy (ORM).
+## MySQLdb to connect to a MySQL database and execute SQL queries.
+----
+## SQLAlchemy (ORM).
 
 - How to connect to a MySQL database from a Python script
 - How to SELECT rows in a MySQL table from a Python script
