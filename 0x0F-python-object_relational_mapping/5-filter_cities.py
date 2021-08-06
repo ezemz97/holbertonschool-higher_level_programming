@@ -6,7 +6,7 @@ the resuls are displayed in ascending order by states.id.
 Takes four arguments.
 
 Example:
-    $ ./3-my_safe_filter_states.py root root hbtn_0e_0_usa
+    $ ./5-filter_cities.py root root hbtn_0e_0_usa
 
 Args:
     user (str): mysql username
