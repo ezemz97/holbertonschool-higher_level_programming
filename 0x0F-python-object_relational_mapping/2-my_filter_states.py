@@ -1,19 +1,20 @@
 #!/usr/bin/python3
-"""Lists all states from the database hbtn_0e_0_usa.
+"""Lists states from the database.
 
-Retrieves all the states from the database, the
-resuls are displayed in ascending order by states.id.
-Takes three arguments.
+Retrieves the matching states by user input from the database,
+the resuls are displayed in ascending order by states.id.
+Takes four arguments.
 
 NOT SAFE FROM SQL INJECTIONS
 
 Example:
-    $ ./0-select_states.py root root hbtn_0e_0_usa
+    $ ./2-my_filter_states.py root root hbtn_0e_0_usa
 
 Args:
     user (str): mysql username
     pass (str): mysql password
     database (str): mysql database name
+    statename (str): state name to search
 """
 import MySQLdb
 from sys import argv
@@ -26,7 +27,8 @@ if __name__ == "__main__":
                            db=argv[3],
                            charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name\
+                LIKE '{}' ORDER BY id ASC".format(argv[4]))
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)

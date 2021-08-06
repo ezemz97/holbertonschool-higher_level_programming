@@ -1,24 +1,24 @@
 #!/usr/bin/python3
-"""Lists all states from the database hbtn_0e_0_usa.
+"""Lists states from the database.
 
-Retrieves all the states from the database, the
-resuls are displayed in ascending order by states.id.
-Takes three arguments.
-
-NOT SAFE FROM SQL INJECTIONS
+Retrieves the cities of the matching state from a database,
+the resuls are displayed in ascending order by states.id.
+Takes four arguments.
 
 Example:
-    $ ./0-select_states.py root root hbtn_0e_0_usa
+    $ ./3-my_safe_filter_states.py root root hbtn_0e_0_usa
 
 Args:
     user (str): mysql username
     pass (str): mysql password
     database (str): mysql database name
+    statename (str): state name to search
 """
 import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
+    statename = argv[4]
     conn = MySQLdb.connect(host="localhost",
                            port=3306,
                            user=argv[1],
@@ -26,9 +26,13 @@ if __name__ == "__main__":
                            db=argv[3],
                            charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT cities.name FROM cities JOIN states\
+                WHERE cities.state_id = states.id AND states.name = %s",\
+                (statename,))
     query_rows = cur.fetchall()
+    cities = []
     for row in query_rows:
-        print(row)
+        cities.append(row[0])
+    print (', '.join(cities))
     cur.close()
     conn.close()

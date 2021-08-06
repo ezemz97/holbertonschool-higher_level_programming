@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-"""Lists all states from the database hbtn_0e_0_usa.
+"""Lists cities from the database.
 
-Retrieves all the states from the database, the
-resuls are displayed in ascending order by states.id.
+Retrieves all the cities from the database with their state,
+the resuls are displayed in ascending order by cities.id.
 Takes three arguments.
 
-NOT SAFE FROM SQL INJECTIONS
-
 Example:
-    $ ./0-select_states.py root root hbtn_0e_0_usa
+    $ ./4-cities_by_state.py root root hbtn_0e_4_usa
+    ('cities.id', 'cities.name', 'states.name')
 
 Args:
     user (str): mysql username
     pass (str): mysql password
     database (str): mysql database name
+    cityname (str): state name to search
 """
 import MySQLdb
 from sys import argv
@@ -26,7 +26,9 @@ if __name__ == "__main__":
                            db=argv[3],
                            charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT cities.id, cities.name, states.name\
+                FROM cities LEFT JOIN states ON cities.state_id = states.id\
+                ORDER BY id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
