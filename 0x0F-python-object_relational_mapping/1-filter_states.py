@@ -27,6 +27,14 @@ if __name__ == "__main__":
                            charset="utf8")
     cur = conn.cursor()
     cur.execute("SELECT * FROM states ORDER BY states.id ASC")
+    """Don't do this:
+
+    SELECT * FROM states
+    WHERE states.name LIKE 'N%'
+    ORDER BY states.id ASC;
+
+    Checker fails
+    """
     query_rows = cur.fetchall()
     for row in query_rows:
         if row[1].startswith("N"):
