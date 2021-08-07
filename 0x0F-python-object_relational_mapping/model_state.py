@@ -6,6 +6,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String
 
+Base = declarative_base()
+
 
 class State(Base):
     """The 'state' class definition. (SQLAlchemy ORM)
