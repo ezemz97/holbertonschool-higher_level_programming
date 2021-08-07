@@ -7,9 +7,10 @@ from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String
 
 eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                        .format(sys.argv[1], sys.argv[2],
-                                sys.argv[3]), pool_pre_ping=True)
+                    .format(sys.argv[1], sys.argv[2],
+                            sys.argv[3]), pool_pre_ping=True)
 Base = declarative_base()
+
 
 class State(Base):
     __tablename__ = 'states'
