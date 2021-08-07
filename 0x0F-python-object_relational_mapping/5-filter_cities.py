@@ -27,7 +27,7 @@ if __name__ == "__main__":
                            charset="utf8")
     cur = conn.cursor()
     cur.execute("SELECT cities.name FROM cities JOIN states "
-                "WHERE cities.state_id = states.id AND states.name = %s",\
+                "WHERE cities.state_id = states.id AND states.name = %s",
                 (statename,))
     query_rows = cur.fetchall()
     cities = []
