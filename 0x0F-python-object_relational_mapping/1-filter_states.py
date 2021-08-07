@@ -26,9 +26,10 @@ if __name__ == "__main__":
                            db=argv[3],
                            charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
-        print(row)
+        if row[1].startswith("N"):
+            print(row)
     cur.close()
     conn.close()
