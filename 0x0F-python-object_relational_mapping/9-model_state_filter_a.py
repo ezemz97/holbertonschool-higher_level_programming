@@ -21,6 +21,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     session = Session(engine)
     for state in session.query(State).order_by(State.id)\
-                        .filter("a" in str(State.name)):
+                        .filter(State.name.like("%a%")):
+                        # This works: .filter("a" in str(State.name) : ANTI CHECKER
         print("{}: {}".format(state.id, state.name))
     session.close()
