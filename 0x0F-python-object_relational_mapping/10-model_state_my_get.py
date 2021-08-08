@@ -21,7 +21,12 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
     session = Session(engine)
-    for state in session.query(State).order_by(State.id)\
-                        .filter(State.name.like("%s".format(sys.argv[4]))):
-        print("{}".format(state.id))
+    query = session.query(State).order_by(State.id)\
+                   .filter(State.name == sys.argv[4]).all()
+    if query:
+        for state in query:
+            print("{}".format(state.id))
+            # print(row.name)
+    else:
+        print("Not found")
     session.close()
