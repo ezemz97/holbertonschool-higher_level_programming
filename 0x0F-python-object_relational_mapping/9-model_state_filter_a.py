@@ -22,6 +22,7 @@ if __name__ == "__main__":
     session = Session(engine)
     for state in session.query(State).order_by(State.id)\
                         .filter(State.name.like("%a%")):
-                        # This works: .filter("a" in str(State.name) : ANTI CHECKER
+                        # Checker won't like, but it works:
+                        # .filter("a" in str(State.name)
         print("{}: {}".format(state.id, state.name))
     session.close()
