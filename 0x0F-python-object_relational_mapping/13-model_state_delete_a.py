@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""List all State objects containing "a" from db (ORM)
+"""Delete all State objects containing "a" from db (ORM)
 
 Here we use Session as interface to the database.
 
