@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" List all State objects from db
+""" List all State objects from db (ORM)
+
+Here we use Session as interface to the database
 """
 import sys
 from model_state import Base, State
@@ -15,4 +17,4 @@ if __name__ == "__main__":
     session = Session(engine)
     for state in session.query(State).order_by(State.id).all():
         print("{}: {}".format(state.id, state.name))
-session.close()
+    session.close()
