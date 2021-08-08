@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Search for a specific state from db (ORM)
+"""Adds the State object “Louisiana” to the database.
 
 Here we use Session as interface to the database.
 
@@ -7,7 +7,6 @@ Args:
     user (str): mysql username
     pass (str): mysql password
     database (str): mysql database name
-    statename (str): state name to search
 """
 import sys
 from model_state import Base, State
@@ -21,12 +20,8 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
     session = Session(engine)
-    query = session.query(State).order_by(State.id)\
-                   .filter(State.name == sys.argv[4]).all()
-    if query:
-        for state in query:
-            print("{}".format(state.id))
-            # print(row.name)
-    else:
-        print("Not found")
-    session.close()
+
+    louisiana = State(name='Louisiana')
+    session.add(louisiana)
+    session.commit()
+    print(louisiana.id)
