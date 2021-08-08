@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ List all State objects from db (ORM)
 
-Here we use Session as interface to the database
+Here we use Session as interface to the database.
 """
 import sys
 from model_state import Base, State
