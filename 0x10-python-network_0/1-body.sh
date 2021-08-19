@@ -1,3 +1,3 @@
 #!/bin/bash
 # curl -L (location)
-curl -L "$1"
+curl -sL "$1"
