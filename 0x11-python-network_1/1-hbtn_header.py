@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-"""Fetches https://intranet.hbtn.io/status
-
-Prints the "X-Request-Id" header's value from URL
+"""Prints the "X-Request-Id" header's value from URL (argv[1]).
 
 Args:
     url (str): Destination URL
+
+Example:
+    $ ./1-hbtn_header.py https://intranet.hbtn.io
+    d623ce98-f11b-4357-865c-d2818cc4d1c5
+    $
 """
 
 
