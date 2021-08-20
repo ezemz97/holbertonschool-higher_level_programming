@@ -13,7 +13,7 @@ if __name__ == "__main__":
         html = response.read()
         decode = html.decode('utf-8')
         print("Body response:\n"
-            "\t- type: {}\n"
-            "\t- content: {}\n"
-            "\t- utf8 content: {}"
-            .format(type(html), html, decode))
+              "\t- type: {}\n"
+              "\t- content: {}\n"
+              "\t- utf8 content: {}"
+              .format(type(html), html, decode))
