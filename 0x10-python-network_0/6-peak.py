@@ -8,7 +8,7 @@ def find_peak(list_of_integers):
     Doesn't take into account the first and last elements as peak
     """
 
-    if list_of_integers == []:
+    if len(list_of_integers) == 0 or list_of_integers is None:
         return None
     elif len(list_of_integers) == 1:
         return list_of_integers[0]
