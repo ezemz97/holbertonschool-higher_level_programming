@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""Sends get request (headers) to URL (argv)
-
-Print the "X-Request-Id" header's value.
+"""Retrieves the "X-Request-Id" header's value from specified URL.
 
 Args:
     url: Destination URL
