@@ -3,8 +3,9 @@
 
 Prints the type of the response,
 the content, and the utf-8 decoded content.
-
 """
+
+
 import urllib.request
 
 with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
