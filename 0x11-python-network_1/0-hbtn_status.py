@@ -11,8 +11,8 @@ import urllib.request
 with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
     html = response.read()
     decode = html.decode('utf-8')
-    print("Body response:\n "
-          "\t- type: {}\n "
-          "\t- content: {}\n "
+    print("Body response:\n"
+          "\t- type: {}\n"
+          "\t- content: {}\n"
           "\t- utf8 content: {}"
           .format(type(html), html, decode))
