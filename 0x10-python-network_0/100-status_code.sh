@@ -1,3 +1,3 @@
 #!/bin/bash
 # Write out response code
-curl -s -w '%{http_code}' $1 -o /dev/null
+curl -s -w '%{response_code}' $1 -o /dev/null
