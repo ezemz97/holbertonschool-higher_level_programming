@@ -18,4 +18,4 @@ if __name__ == "__main__":
     except requests.exceptions.HTTPError:
         print("Error code: {}".format(r.status_code))
     else:
-        print("{}".format(r.text))
+        print(r.text)
