@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """Module for find peak function"""
 
-from typing import Sized
-
 
 def find_peak(list_of_integers):
     """Finds a peak element using a binary search function.
