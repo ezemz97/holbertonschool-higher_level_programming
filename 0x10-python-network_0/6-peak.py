@@ -19,7 +19,7 @@ def find_peak(list_of_integers):
         if (list_of_integers[mid_idx] >= list_of_integers[mid_idx + 1] and
                 list_of_integers[mid_idx] >= list_of_integers[mid_idx - 1]):
             return list_of_integers[mid_idx]
-        elif (list_of_integers[mid_idx] < list_of_integers[mid_idx - 1]):
-            return find_peak(list_of_integers[:mid_idx - 1])
         elif (list_of_integers[mid_idx] < list_of_integers[mid_idx + 1]):
             return find_peak(list_of_integers[mid_idx + 1:])
+        elif (list_of_integers[mid_idx] < list_of_integers[mid_idx - 1]):
+            return find_peak(list_of_integers[:mid_idx - 1])
