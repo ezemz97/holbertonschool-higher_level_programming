@@ -6,6 +6,7 @@ Takes GitHub credentials (username and password (token))
 Args:
     username: github user
     password: github password (token)
+
 Example:
     ./10-my_github.py ezedksl ghp_CdLQXOM1j94BfG3l4S5hsvBZfECGGc0IHuV2
 """
